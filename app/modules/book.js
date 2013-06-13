@@ -17,7 +17,7 @@ define(["namespace", "use!backbone"], function(namespace, Backbone) {
                 $("#main").html(el);
             });
         }
-    }):
+    });
 
     Book.Model = Backbone.Model.extend({});
 
@@ -49,6 +49,10 @@ define(["namespace", "use!backbone"], function(namespace, Backbone) {
                 view.el.innerHtml = tmpl({
                     books: view.collection.toJSON()
                 });
+
+                if (_.isFunction(done)) {
+                    done(view.el);
+                }
             });
         }
     });
