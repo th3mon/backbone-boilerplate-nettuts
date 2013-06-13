@@ -50,18 +50,14 @@ define(["namespace", "use!backbone"], function(namespace, Backbone) {
                     books: view.collection.toJSON()
                 });
 
-                console.log(view.el);
-
                 if (_.isFunction(done)) {
-                    done(view.el);
+                    done(view.el.innerHtml);
                 }
             });
         }
     });
 
     router = new Book.Router();
-
-    console.log("test");
 
     return Book;
 });
