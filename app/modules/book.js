@@ -34,7 +34,7 @@ define(["namespace", "use!backbone"], function(namespace, Backbone) {
                 view.el.innerHtml = tmpl(view.model.toJSON());
 
                 if (_.isFunction(done)) {
-                    done(view.el);
+                    done(view.el.innerHtml);
                 }
             });
         },
